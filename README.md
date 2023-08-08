@@ -60,44 +60,44 @@ As the models are currently fully loaded into memory, you will need adequate dis
 **Starting up:**
 When starting up it looks like this:
 
-main: build = 803 (1d656d6)
-main: seed  = 1691487030
-llama.cpp: loading model from ./models/7B/ggml-model-q4_0.bin
-llama_model_load_internal: format     = ggjt v3 (latest)
-llama_model_load_internal: n_vocab    = 32000
-llama_model_load_internal: n_ctx      = 512
-llama_model_load_internal: n_embd     = 4096
-llama_model_load_internal: n_mult     = 256
-llama_model_load_internal: n_head     = 32
-llama_model_load_internal: n_layer    = 32
-llama_model_load_internal: n_rot      = 128
-llama_model_load_internal: ftype      = 2 (mostly Q4_0)
-llama_model_load_internal: n_ff       = 11008
-llama_model_load_internal: model size = 7B
-llama_model_load_internal: ggml ctx size =    0.08 MB
-llama_model_load_internal: mem required  = 5439.94 MB (+ 1026.00 MB per state)
-llama_new_context_with_model: kv self size  =  256.00 MB
+    main: build = 803 (1d656d6)
+    main: seed  = 1691487030
+    llama.cpp: loading model from ./models/7B/ggml-model-q4_0.bin
+    llama_model_load_internal: format     = ggjt v3 (latest)
+    llama_model_load_internal: n_vocab    = 32000
+    llama_model_load_internal: n_ctx      = 512
+    llama_model_load_internal: n_embd     = 4096
+    llama_model_load_internal: n_mult     = 256
+    llama_model_load_internal: n_head     = 32
+    llama_model_load_internal: n_layer    = 32
+    llama_model_load_internal: n_rot      = 128
+    llama_model_load_internal: ftype      = 2 (mostly Q4_0)
+    llama_model_load_internal: n_ff       = 11008
+    llama_model_load_internal: model size = 7B
+    llama_model_load_internal: ggml ctx size =    0.08 MB
+    llama_model_load_internal: mem required  = 5439.94 MB (+ 1026.00 MB per state)
+    llama_new_context_with_model: kv self size  =  256.00 MB
 
-system_info: n_threads = 4 / 4 | AVX = 1 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 0 | NEON = 0 | ARM_FMA = 0 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 1 | VSX = 0 | 
-main: interactive mode on.
-Reverse prompt: 'User:'
-sampling: repeat_last_n = 64, repeat_penalty = 1.000000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
-generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 48
+    system_info: n_threads = 4 / 4 | AVX = 1 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 0 | NEON = 0 | ARM_FMA = 0 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 1 | VSX = 0 | 
+    main: interactive mode on.
+    Reverse prompt: 'User:'
+    sampling: repeat_last_n = 64, repeat_penalty = 1.000000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
+    generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 48
 
 
-== Running in interactive mode. ==
- - Press Ctrl+C to interject at any time.
- - Press Return to return control to LLaMa.
- - To return control without starting a new line, end your input with '/'.
- - If you want to submit another line, end your input with '\'.
+    == Running in interactive mode. ==
+     - Press Ctrl+C to interject at any time.
+     - Press Return to return control to LLaMa.
+     - To return control without starting a new line, end your input with '/'.
+     - If you want to submit another line, end your input with '\'.
 
- Transcript of a dialog, where the User interacts with an Assistant named Bob. Bob is helpful, kind, honest, good at writing, and never fails to answer the User's requests immediately and with precision.
+     Transcript of a dialog, where the User interacts with an Assistant named Bob. Bob is helpful, kind, honest, good at writing, and never fails to answer the User's requests immediately and with precision.
 
-User: Hello, Bob.
-Bob: Hello. How may I help you today?
-User: Please tell me the largest city in Europe.
-Bob: Sure. The largest city in Europe is Moscow, the capital of Russia.
+    User: Hello, Bob.
+    Bob: Hello. How may I help you today?
+    User: Please tell me the largest city in Europe.
+    Bob: Sure. The largest city in Europe is Moscow, the capital of Russia._
 
-Do I have the right models? Run checksums
+**Do I have the right models?** Run checksums
 
     ./scripts/verify-checksum-models.py
