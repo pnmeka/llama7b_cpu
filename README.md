@@ -3,11 +3,11 @@ My attempt at running quantized 7b llama model on CPU
 
 I have just followed directions in the Readme file and was able to run quantized llama 7b model. However my token generation was very slow. I do have an old Dell XPS, that runs linux debian.
 
-Step 1: Looks like the repo maintainer has spent a good amount of time trying to develelop quantization of meta models which prettey much allows it to run on most computers
+**Step 1: **Looks like the repo maintainer has spent a good amount of time trying to develelop quantization of meta models which prettey much allows it to run on most computers
 
     git clone https://github.com/ggerganov/llama.cpp
 
-Step 2: Obtain the original models. In this case 7B and place it in 'models' folder
+**Step 2:** Obtain the original models. In this case 7B and place it in 'models' folder
 How to get it you ask? I used deluge torrent on linux with hash of cdee3052d85c697b84f4c1192f43a2276c0daea0
 There are of course other ways on Hugging face.
 
@@ -15,11 +15,11 @@ Once you get the models, place the 7B model in the models folder of llama.cpp. A
 
     cd llama.cpp
 
-Step 3: In my case I had python3 and used it to install dependencies
+**Step 3: **In my case I had python3 and used it to install dependencies
 
     python3 -m pip install -r requirements.txt
 
-Step 4: Now to convert to ggml FP16 format
+**Step 4:** Now to convert to ggml FP16 format
 Why this format you ask? GGML FP16 format refers to a specific format for representing numerical data in machine learning models. FP16 stands for 16-bit floating-point, which is a data type commonly used in deep learning frameworks for training and inference.
 
 In machine learning, numerical values are typically stored as floating-point numbers, which can represent both fractional and whole numbers with a certain level of precision. The precision of a floating-point number is determined by the number of bits allocated for the fractional and exponent parts.
@@ -32,11 +32,11 @@ Using the FP16 format in machine learning models can provide benefits such as re
 
     python3 convert.py models/7B/
 
-Step 4: Now to quantize the model to 4 bits. This allows it to run on a simple CPU like mine:
+**Step 5:** Now to quantize the model to 4 bits. This allows it to run on a simple CPU like mine:
 
     ./quantize ./models/7B/ggml-model-f16.bin ./models/7B/ggml-model-q4_0.bin q4_0
 
-Step 6: Now to start the chat mode you might have seen online.
+**Step 6:** Now to start the chat mode you might have seen online.
 
     ./examples/chat.sh
 
